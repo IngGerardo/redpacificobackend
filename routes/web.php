@@ -34,3 +34,22 @@ $router->post('/productos', 'ProductosController@agregarProducto');
 $router->put('/productos/{id:[0-9]+}', 'ProductosController@actualizarProducto');
 
 $router->delete('/productos/{id:[0-9]+}', 'ProductosController@eliminarProducto');
+
+/* Configuración*/
+
+$router->get('/configuraciones', 'ConfiguracionController@cargarConfiguracion');
+
+$router->post('/configuraciones', 'ConfiguracionController@agregarConfiguracion');
+
+/* Ventas*/
+
+$router->get('/ventas/clientes', 'VentasController@cargarClientes');
+
+$router->get('/ventas/productos', 'VentasController@cargarProductos');
+
+$router->post('/ventas', 'VentasController@agregarVenta');
+
+$router->delete('/ventas/{id:[0-9]+}', 'VentasController@eliminarVenta');
+
+$router->get('/ventas/clientes/{id:[0-9]+}', 'VentasController@consultarVentas');
+

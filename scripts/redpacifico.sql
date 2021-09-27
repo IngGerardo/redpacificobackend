@@ -35,35 +35,18 @@ CREATE TABLE cat_productos (
 	num_existencia INTEGER NOT NULL DEFAULT 0,
     fec_registro DATE NOT NULL DEFAULT CURRENT_DATE
 );
-/*
-CREATE TABLE cat_roles (
-    id SERIAL PRIMARY KEY,
-    nombrerol VARCHAR(50) NOT NULL,
-	bonohora INTEGER NOT NULL DEFAULT 0,
-    fecharegistro DATE NOT NULL DEFAULT CURRENT_DATE
-);
-INSERT INTO cat_roles (nombrerol, bonohora) VALUES ('Chofer', 10);
-INSERT INTO cat_roles (nombrerol, bonohora) VALUES ('Cargador', 5);
-INSERT INTO cat_roles (nombrerol, bonohora) VALUES ('Auxiliar', 0);
 
-CREATE TABLE cat_tipos (
-    id SERIAL PRIMARY KEY,
-    nombretipo VARCHAR(50) NOT NULL,
-    fecharegistro DATE NOT NULL DEFAULT CURRENT_DATE
+CREATE TABLE ctl_configuracion (
+    idu_configuracion SERIAL PRIMARY KEY,
+    num_tasa REAL NOT NULL DEFAULT 0,
+    num_enganche INTEGER NOT NULL DEFAULT 0,
+	num_plazo INTEGER NOT NULL DEFAULT 0
 );
-INSERT INTO cat_tipos (nombretipo) VALUES ('Interno');
-INSERT INTO cat_tipos (nombretipo) VALUES ('Externo');
 
-CREATE TABLE ctl_sueldos (
-    id SERIAL PRIMARY KEY,
-    basehora INTEGER NOT NULL,
-    jornadalaboral INTEGER NOT NULL,
-	adicional INTEGER NOT NULL,
-	valesdespensa INTEGER NOT NULL,
-	sueldosobrepasar INTEGER NOT NULL,
-	anioactual INTEGER NOT NULL DEFAULT date_part('year', CURRENT_DATE),
-    isr INTEGER NOT NULL,
-    isradicional INTEGER NOT NULL
+CREATE TABLE ctl_ventas (
+    idu_venta SERIAL PRIMARY KEY,
+    idu_producto INTEGER NOT NULL DEFAULT 0,
+    idu_cliente INTEGER NOT NULL DEFAULT 0,
+	num_cantidad INTEGER NOT NULL DEFAULT 0,
+	fec_registro DATE NOT NULL DEFAULT CURRENT_DATE
 );
-INSERT INTO ctl_sueldos (basehora, jornadalaboral, adicional, valesdespensa, sueldosobrepasar, isr, isradicional) VALUES (30, 8, 5, 4, 16000, 9, 3);
-*/
